@@ -28,13 +28,13 @@ func main() {
 
 func (s *Struct) A() {
 	s.Lock()
-	defer s.Lock()
 	s.B()
+	s.Unlock()
 }
 
 func (s *Struct) B() {
 	s.Lock()
-	defer s.Lock()
+	s.Unlock()
 }
 ```
 
@@ -60,13 +60,13 @@ func main() {
 
 func (s *Struct) A() {
 	s.Lock()
-	defer s.Lock()
 	s.B()
+	s.Unlock()
 }
 
 func (s *Struct) B() {
 	s.Lock()
-	defer s.Lock()
+	s.Unlock()
 }
 ```
 
